@@ -1,0 +1,73 @@
+cmake_minimum_required(VERSION 3.24)
+
+project(boost-asio-example VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+find_package(Boost REQUIRED COMPONENTS thread)
+
+add_executable(synchronous_timer)
+target_sources(synchronous_timer PRIVATE synchronous_timer.cpp)
+target_compile_features(synchronous_timer PUBLIC cxx_std_20)
+set_target_properties(synchronous_timer PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(synchronous_timer PRIVATE Boost::boost)
+
+add_executable(asynchronous_timer)
+target_sources(asynchronous_timer PRIVATE asynchronous_timer.cpp)
+target_compile_features(asynchronous_timer PUBLIC cxx_std_20)
+set_target_properties(asynchronous_timer PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(asynchronous_timer PRIVATE Boost::boost)
+
+add_executable(binding_arguments)
+target_sources(binding_arguments PRIVATE binding_arguments.cpp)
+target_compile_features(binding_arguments PUBLIC cxx_std_20)
+set_target_properties(binding_arguments PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(binding_arguments PRIVATE Boost::boost)
+
+add_executable(completition_handler)
+target_sources(completition_handler PRIVATE completition_handler.cpp)
+target_compile_features(completition_handler PUBLIC cxx_std_20)
+set_target_properties(completition_handler PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(completition_handler PRIVATE Boost::boost)
+
+add_executable(synchronizing_handlers)
+target_sources(synchronizing_handlers PRIVATE synchronizing_handlers.cpp)
+target_compile_features(synchronizing_handlers PUBLIC cxx_std_20)
+set_target_properties(synchronizing_handlers PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(synchronizing_handlers PRIVATE Boost::boost Boost::thread)
+
+add_executable(synchronous_tcp_client)
+target_sources(synchronous_tcp_client PRIVATE synchronous_tcp_client.cpp)
+target_compile_features(synchronous_tcp_client PUBLIC cxx_std_20)
+set_target_properties(synchronous_tcp_client PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(synchronous_tcp_client PRIVATE Boost::boost)
+
+add_executable(synchronous_tcp_server)
+target_sources(synchronous_tcp_server PRIVATE synchronous_tcp_server.cpp)
+target_compile_features(synchronous_tcp_server PUBLIC cxx_std_20)
+set_target_properties(synchronous_tcp_server PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(synchronous_tcp_server PRIVATE Boost::boost)
+
+add_executable(asynchronous_tcp_server)
+target_sources(asynchronous_tcp_server PRIVATE asynchronous_tcp_server.cpp)
+target_compile_features(asynchronous_tcp_server PUBLIC cxx_std_20)
+set_target_properties(asynchronous_tcp_server PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(asynchronous_tcp_server PRIVATE Boost::boost)
+
+add_executable(synchronous_udp_client)
+target_sources(synchronous_udp_client PRIVATE synchronous_udp_client.cpp)
+target_compile_features(synchronous_udp_client PUBLIC cxx_std_20)
+set_target_properties(synchronous_udp_client PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(synchronous_udp_client PRIVATE Boost::boost)
+
+add_executable(synchronous_udp_server)
+target_sources(synchronous_udp_server PRIVATE synchronous_udp_server.cpp)
+target_compile_features(synchronous_udp_server PUBLIC cxx_std_20)
+set_target_properties(synchronous_udp_server PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(synchronous_udp_server PRIVATE Boost::boost)
+
+add_executable(asynchronous_udp_server)
+target_sources(asynchronous_udp_server PRIVATE asynchronous_udp_server.cpp)
+target_compile_features(asynchronous_udp_server PUBLIC cxx_std_20)
+set_target_properties(asynchronous_udp_server PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(asynchronous_udp_server PRIVATE Boost::boost)
