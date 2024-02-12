@@ -17,3 +17,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\*\Shell\Vim\command]
 @="\"C:\\vim\\vim91\\gvim.exe\" \"%1\""
 ```
+
+## Add vim as an external tool to Visual Studio
+- Add vim.exe to Tools > External Tools > Add
+  - Arguments `--servername gVimStudio --remote-silent +"execute 'normal! $(CurLine)G$(CurCol)|'" +"simalt ~x" "$(ItemPath)"`
+    - This uses a single instance of vim, positions the cursor to the same place as in VS, and opens it full screen
